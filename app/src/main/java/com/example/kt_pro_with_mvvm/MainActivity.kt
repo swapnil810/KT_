@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 //*****************************1st way for click*********************************************************//
 
-        mainViewModel.quoteLiveData.observe(this, Observer {
-            binding.setValueText.text = it
-        })
-// simple btn click using @id in xml  android:id="@+id/nextBtn"
-        binding.nextBtn.setOnClickListener {
-            mainViewModel.updateQuote()
-        }
+//        mainViewModel.quoteLiveData.observe(this, Observer {
+//            binding.setValueText.text = it
+//        })
+//// simple btn click using @id in xml  android:id="@+id/nextBtn"
+//        binding.nextBtn.setOnClickListener {
+//            mainViewModel.updateQuote()
+//        }
 
 // ****************************2nd way for click*********************************************************//
 
@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
 //***************************Simple-one-activity-to-2nd-activity-click-in-Kotlin************************//
 
 //       click  android:id="@+id/nextBtn"
-//        binding.nextBtn.setOnClickListener {
-//            intent = Intent(applicationContext, BuntyActivity::class.java)
-//            startActivity(intent)
-//         }
+        binding.nextBtn.setOnClickListener {
+            intent = Intent(applicationContext, BuntyActivity::class.java)
+            startActivity(intent)
+         }
     }
 
 }
